@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header-section {
+    background-color: #007bff;
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.header-text {
+    max-width: 50%;
+}
+
+.header-text h1 {
+    font-size: 3rem;
+}
+
+.header-text p {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.header-text .btn {
+    background-color: #ffffff;
+    color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    z-index: 2;
+    position: relative;
+}
+
+form h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Asymetryczne tło */
+.header-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;/
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background-color: #0056b3;
+    transform: skewY(-5deg);
+    z-index: 0; /* na samym spodzie, box model ? niżej jest*/
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-text {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .form-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    .header-text {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        order: 2;
+        width: 100%;
+    }
+
+    .header-section::after {
+        bottom: -30px; /* Dostosowanie wysokości tła na małych ekranach */
+    }
+}
