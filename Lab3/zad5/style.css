@@ -9,6 +9,8 @@ body {
     background-image: url('tlo.png');
     background-size: cover;
     background-position: center;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
@@ -58,6 +60,7 @@ body {
     border-radius: 5px;
 }
 
+/* Główne podmenu */
 .submenu,
 .submenu-2 {
     list-style: none;
@@ -68,27 +71,33 @@ body {
     border-radius: 5px;
     display: none;
     padding: 10px;
+    z-index: 1;
 }
 
 .submenu-2 {
     left: 100%;
     top: 0;
     background-color: rgba(255, 255, 255, 0.9);
+    z-index: 2;
 }
 
+.menu-item:hover .submenu,
 .submenu-item:hover .submenu-2 {
     display: block;
 }
 
-.menu-item:hover .submenu {
+/* Aby pierwsze podmenu pozostawało widoczne nawet, gdy najedziesz na drugie */
+.submenu-item:hover .submenu {
     display: block;
 }
 
+/* Elementy podmenu */
 .submenu-item a,
 .submenu-2 li a {
     color: #333;
     padding: 5px 15px;
     display: block;
+    white-space: nowrap;
 }
 
 .submenu-item a:hover,
@@ -97,6 +106,7 @@ body {
     color: white;
 }
 
+/* Stylizacja przycisków login i register */
 .auth-buttons {
     display: flex;
     gap: 10px;
