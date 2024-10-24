@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('tlo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    width: 100%;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+
+.menu-item a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.submenu,
+.submenu-2 {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    display: none;
+    padding: 10px;
+}
+
+.submenu-2 {
+    left: 100%;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.submenu-item:hover .submenu-2 {
+    display: block;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.submenu-item a,
+.submenu-2 li a {
+    color: #333;
+    padding: 5px 15px;
+    display: block;
+}
+
+.submenu-item a:hover,
+.submenu-2 li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.signup {
+    background-color: white;
+    color: #007bff;
+}
+
+.login:hover {
+    background-color: white;
+    color: #007bff;
+}
+
+.signup:hover {
+    background-color: #007bff;
+    color: white;
+}
